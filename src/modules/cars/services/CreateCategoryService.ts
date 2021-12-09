@@ -1,14 +1,14 @@
-import { CategoriesRepository } from "../repositories/CategoriesRepository";
 
+import { ICategoriesRepository} from '../modules/cars/repositories/ICategoriesRepository'
 interface ICategory {
   name: string;
   description: string;
 }
 
 class CreateCategoryService {
-  private categoryRepository: CategoriesRepository;
-  
-  constructor(categoryRepository: CategoriesRepository){
+  private categoryRepository: ICategoriesRepository;
+
+  constructor(categoryRepository: ICategoriesRepository){
     this.categoryRepository = categoryRepository;
   }
 
