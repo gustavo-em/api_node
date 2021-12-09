@@ -1,5 +1,9 @@
 import {Category} from '../model/Category'
 
+interface ICreateCategory {
+    name: string;
+    description: string;
+}
 
 class CategoriesRepository {
     private categories: Category[];
@@ -8,7 +12,7 @@ class CategoriesRepository {
         this.categories = [];
     }
 
-    create(name: string, description: string): void{
+    create({name, description}: ICreateCategory): void{
         const category = new Category();
 
         Object.assign(category, {
@@ -19,6 +23,11 @@ class CategoriesRepository {
 
         this.categories.push(category)
 
+    }
+
+    get(): Category[]{
+        
+        return this.categories;
     }
 }
 
