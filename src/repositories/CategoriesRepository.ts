@@ -29,6 +29,11 @@ class CategoriesRepository {
         
         return this.categories;
     }
+
+    findByName(name: string): Category {
+        let category = this.categories.find(c=>c.name === name)
+        return category;
+    }
 }
 
 export { CategoriesRepository }
